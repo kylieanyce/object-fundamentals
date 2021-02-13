@@ -92,7 +92,7 @@ for (const track of tenAlbum.tracks){
     console.log(`Title: ${track.title} - Length: ${track.length}`)
 }
 
-// ! ADD AND COMMIT
+// ! ADD AND COMMIT-------------------------------------------------------------------------------------------------------
 
 // OBJECT.keys() / .values() / .entries()
 // TODO: log the keys of the tenAlbum object using Object.keys()
@@ -106,7 +106,7 @@ for (const track of tenAlbum.tracks){
 // .values()
 // .entries()
 
-// ! ADD AND COMMIT
+// ! ADD AND COMMIT-------------------------------------------------------------------------------------------------------
 
 // USING THE DATA FROM .setlists
 import { setlistsFromAPI } from "./setlists.js";
@@ -125,7 +125,7 @@ import { setlistsFromAPI } from "./setlists.js";
 
 // TODO: USING ANY OF THE WAYS TO LOOP AND ACCESS OBJECT PROPERTIES - iterate the 'firstSet' array and log the name of each song to the console
 
-// ! ADD AND COMMIT
+// ! ADD AND COMMIT-------------------------------------------------------------------------------------------------------
 
 // BONUS IF YOU HAVE TIME...
 // Using only properties of the event object we've previously defined
