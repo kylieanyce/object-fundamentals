@@ -58,11 +58,22 @@ const tenAlbum = {
 // Dot vs. Bracket Notation - accessing properties
 // TODO: USING DOT NOTATION, access the object properties (artist, title, released) and log the following message to the console using string interpolation: "Pearl Jam's Album Ten was released on 8/27/1991"
 
+const artist = tenAlbum.artist
+const title = tenAlbum.title
+const released = tenAlbum.released
+console.log(`${artist}\`s Album ${title} was released on ${released}`)
+
 // TODO: Output the same messge to the console using BRACKET NOTATION
+
+console.log(`${tenAlbum["artist"]}\'s Album ${tenAlbum["title"]} was released on ${tenAlbum["released"]}`)
 
 // Iterating Object keys/values
 // TODO: Iterate the tenAlbum object and log the key/value pairs to the console using a for/in loop
 // example: "title": "Ten"
+
+for (const albumObj in tenAlbum){
+    console.log(`${albumObj}: ${tenAlbum[albumObj]}`)
+}
 
 // Accessing iterable properties on objects
 // TODO: Iterate the tracks array and output the title of each song and its song length using a for loop of your choosing. The output should look something like this:
@@ -71,33 +82,57 @@ const tenAlbum = {
     Title: Even Flow - Length: 293
     etc.
 */
+//using a FOR...IN loop--------------------
+for (const track in tenAlbum.tracks){
+    // debugger
+    console.log(`Title: ${tenAlbum.tracks[track].title} - Length: ${tenAlbum.tracks[track].length}`)
+}
+//using a FOR...OF loop--------------------
+for (const track of tenAlbum.tracks){
+    console.log(`Title: ${track.title} - Length: ${track.length}`)
+}
 
-// ! ADD AND COMMIT
+// ! ADD AND COMMIT-------------------------------------------------------------------------------------------------------
 
 // OBJECT.keys() / .values() / .entries()
 // TODO: log the keys of the tenAlbum object using Object.keys()
+console.log(Object.keys(tenAlbum))
 
 // TODO: log the values of the tenAlbum object Object.values()
+console.log(Object.values(tenAlbum))
 
 // TODO: log the entries of the tenAlbum object Object.entries()
+console.log(Object.entries(tenAlbum))
 
 // TODO: iterate the tenAlbum object and log the key/value pairs to the console using each of the above Object methods:
 // .keys()
 // .values()
 // .entries()
 
-// ! ADD AND COMMIT
+
+// ! ADD AND COMMIT-------------------------------------------------------------------------------------------------------
 
 // USING THE DATA FROM .setlists
 import { setlistsFromAPI } from "./setlists.js";
+
 // TODO: Log 'setlistsFromAPI' to the console
+console.log(setlistsFromAPI)
 
 // TODO: USING the 'setlistsFromAPI' data, find the event dated 18-08-2018 and store that event object in a variable named 'event'
+const event = []
+for (const key of setlistsFromAPI.setlist){
+    if (key.eventDate === "18-08-2018") {
+        event.push(key)
+    }
+}
 
 // TODO: log the 'event' object to the console
+console.log(event)
 
 // TODO: USING DOT OR BRACKET NOTATION AND STRING INTERPOLATION, create a string which includes the name of the band, the venue, and the date of the event and store it in a new variable clled "bandVenueDate"
 // this string should look something like "Pearl Jam - Wrigley Field - 18-08-2018"
+const bandVenueDate = `${tenAlbum.artist} - ${setlistsFromAPI.setlist.eventDate} - ${setlistsFromAPI.setlist[venue].name} `
+console.log(bandVenueDate)
 
 // TODO: log the 'bandVenueDate' string to the console
 
@@ -105,7 +140,7 @@ import { setlistsFromAPI } from "./setlists.js";
 
 // TODO: USING ANY OF THE WAYS TO LOOP AND ACCESS OBJECT PROPERTIES - iterate the 'firstSet' array and log the name of each song to the console
 
-// ! ADD AND COMMIT
+// ! ADD AND COMMIT-------------------------------------------------------------------------------------------------------
 
 // BONUS IF YOU HAVE TIME...
 // Using only properties of the event object we've previously defined
